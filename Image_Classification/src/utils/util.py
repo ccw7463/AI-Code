@@ -1,7 +1,11 @@
+import os
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard
+
+
 def make_path(test_num):
     # 모델 저장 경로정의
     WEIGHT_PATH = 'checkpoints/'
-    model_name = 'mobile2/'
+    model_name = 'Image_Classification/'
     TEST_DIR = 'TEST' + str(test_num) + '/'
 
     # weight 경로지정
@@ -31,7 +35,7 @@ def make_callback(checkpoint_path,log_dir):
     earlystop_callback = EarlyStopping(monitor='val_loss', min_delta=0.00001, patience=100)
 
     # Tensorboard
-    tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
+    tensorboard_callback = TensorBoard(log_dir=log_dir, histogram_freq=1)
 
     # checkpoint
     cp_callback = ModelCheckpoint(

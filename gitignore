@@ -1,0 +1,4 @@
+Image_Classification/checkpoints/*
+Image_CLassification/logs/*
+*.npy
+

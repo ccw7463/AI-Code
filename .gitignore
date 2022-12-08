@@ -165,3 +165,7 @@ Image_Classification/checkpoints/*
 */dataset/*
 */checkpoints/*
 *.csv
+
+# cache
+*/__pycache__
+*/*.ipynb_checkpoints
